@@ -1,0 +1,143 @@
+$color-azul: blue;
+$color-azul-claro: lightblue;
+$color-blanco: white;
+$color-gris-claro: #f2f2f2;
+
+body {
+  font-size: 24px;
+  color: $color-azul;
+}
+
+.containerForm {
+  font-family: Arial, sans-serif;
+  background-color: $color-gris-claro;
+  color: $color-azul;
+  padding: 20px;
+}
+
+.container {
+  padding: 0 2rem;
+}
+
+h1 {
+  color: $color-azul;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.banner {
+  background-color: $color-azul;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  flex: 1 0 auto;
+  margin: 10px; 
+  margin-top: 40px;
+}
+
+.form-input {
+  display: block;
+  width: 92%;
+  padding: 10px;
+  margin-bottom: 30px;
+  border: 2px solid $color-azul-claro;
+  background-color: $color-blanco;
+  color: $color-azul;
+  border-radius: 5px;
+  font-size: 24px;
+  transition: border-color 0.3s ease-in-out;
+
+}
+
+.form-input:focus {
+  border-color: $color-azul;
+  outline: none;
+}
+
+.form-button {
+  border-radius: 5px;
+  background-color: $color-blanco;
+  color: $color-azul;
+  border: 2px solid $color-azul;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 24px;
+  margin-top: 50px;
+}
+
+.form-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-link {
+  color: $color-azul;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.label-image {
+  max-width: 15%;
+  max-height: 15%;
+  margin-bottom: 20px;
+}
+
+// HEADER
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #f2f2f2;
+}
+
+.logo img {
+  max-width: 40px; /* Ajusta el valor según tus necesidades */
+  height: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav.open {
+  flex-direction: column;
+}
+
+.nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: $color-azul;
+}
