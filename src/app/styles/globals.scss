@@ -164,3 +164,24 @@ h1 {
   color: green;
 }
 
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.small-button {
+  font-size: 12px;
+  padding: 5px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: fit-content;
+}
+
+.chart-container {
+  width: 100%;
+}
+

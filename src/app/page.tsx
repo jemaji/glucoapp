@@ -17,6 +17,29 @@ const Page = () => {
     { date: '2023-05-08', value: 130 },
     { date: '2023-05-09', value: 130 },
     { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-05-10', value: 130 },
+    { date: '2023-06-10', value: 130 },
+    { date: '2023-06-10', value: 12 },
+    { date: '2023-06-10', value: 12 },
+    { date: '2023-06-10', value: 12 },
     // ... más datos de glucosa
   ];
 
@@ -30,6 +53,29 @@ const Page = () => {
     { date: '2023-05-08', value: 10 },
     { date: '2023-05-09', value: 12 },
     { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-05-10', value: 12 },
+    { date: '2023-06-10', value: 12 },
+    { date: '2023-06-10', value: 12 },
+    { date: '2023-06-10', value: 12 },
+    { date: '2023-06-10', value: 12 },
     // ... más datos de insulina
   ];
 
@@ -38,8 +84,8 @@ const Page = () => {
       <Header />
       <div className="page-content">
         <BloodGlucoseForm />
+        <Chart glucoseData={glucoseData} insulinData={insulinData} />
       </div>
-      <Chart glucoseData={glucoseData} insulinData={insulinData} />
     </div>
   );
 };
