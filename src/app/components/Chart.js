@@ -37,6 +37,11 @@ const Chart = ({ glucoseData, insulinData }) => {
     setSelectedMonth(uniqueMonths[0]); // Establecer el primer mes como seleccionado inicialmente
   }, [glucoseData]);
 
+  const formatTick = (value) => {
+    const date = new Date(value);
+    return date.getDate().toString();
+  };
+
   return (
     <div>
       <div className="button-container">
@@ -44,7 +49,7 @@ const Chart = ({ glucoseData, insulinData }) => {
           <button
             key={month}
             onClick={() => handleMonthChange(month)}
-            className="form-button small-button"
+            className={`form-button small-button ${selectedMonth === month ? 'selected' : ''}`}
           >
             {month}
           </button>
@@ -57,7 +62,7 @@ const Chart = ({ glucoseData, insulinData }) => {
             <XAxis
               dataKey="date"
               tick={{ fontSize: 10, fill: 'blue' }}
-              tickFormatter={(value) => value.slice(0, 7)}
+              tickFormatter={formatTick}
               label={{ value: 'Fecha', position: 'top', fontSize: 12, fill: 'blue' }}
             />
             <YAxis
@@ -83,6 +88,12 @@ const Chart = ({ glucoseData, insulinData }) => {
           </LineChart>
         </ResponsiveContainer>
       </div>
+      <style jsx>{`
+        .selected {
+          background-color: blue;
+          color: white;
+        }
+      `}</style>
     </div>
   );
 };
