@@ -30,6 +30,25 @@ const BloodGlucoseForm = () => {
   const [insulin, setInsulin] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const [reminderMessage, setReminderMessage] = useState('');
+
+
+  const getCurrentHour = () => {
+    const date = new Date();
+    return date.getHours();
+  };
+
+  const setInsulinAux = (insulin_) => {
+    if (insulin_ !== '') {
+      const currentHour = getCurrentHour();
+      if (currentHour >= 7 && currentHour < 23) {
+        setReminderMessage('Recuerda purgar el bolígrafo con 2 unidades');
+      }
+    }
+    setInsulin(insulin_);
+  }
+
+  
 
   const setError = (message) => {
     setErrorMessage(message);
@@ -42,7 +61,7 @@ const BloodGlucoseForm = () => {
     setBloodGlucose(value);
 
     if (value=='') {
-      setInsulin('');
+      setInsulinAux('');
     } else {
       // pauta
      let insulinValue = ''
@@ -52,7 +71,7 @@ const BloodGlucoseForm = () => {
           break;
         }
       } 
-      setInsulin(insulinValue);
+      setInsulinAux(insulinValue);
     }
   };
 
@@ -80,7 +99,7 @@ const BloodGlucoseForm = () => {
     push(formDataRef, data)
       .then(() => {
         setBloodGlucose('');
-        setInsulin('');
+        setInsulinAux('');
         setSuccessMessage('¡Guardado exitosamente!');
         setTimeout(() => setSuccessMessage(''), 2000);
       })
@@ -100,6 +119,7 @@ const BloodGlucoseForm = () => {
         placeholder="Glucosa"
       />
       <img className='label-image' src="/insulina.png" alt="Insulin label" />
+      <div className='reminder-insuline'>{reminderMessage}</div>
       <input
         className='form-input'
         type="text"
