@@ -31,6 +31,7 @@ const BloodGlucoseForm = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [reminderMessage, setReminderMessage] = useState('');
+  const [slowMessage, setSlowMessage] = useState('');
 
 
   const getCurrentHour = () => {
@@ -48,11 +49,17 @@ const BloodGlucoseForm = () => {
     setInsulin(insulin_);
   }
 
-  
+  const controlSlow = () => {
+    const currentHour = getCurrentHour();
+    console.log(currentHour);
+    if (currentHour > 9) {
+      setSlowMessage('Recuerda las 40 unidades de lenta');
+    }
+  }
 
   const setError = (message) => {
     setErrorMessage(message);
-    setTimeout(() => setErrorMessage(''), 3000  );
+    setTimeout(() => setErrorMessage(''), 3000);
     setBloodGlucose('')
   }
 
@@ -60,18 +67,21 @@ const BloodGlucoseForm = () => {
     const value = event.target.value;
     setBloodGlucose(value);
 
-    if (value=='') {
+    if (value == '') {
       setInsulinAux('');
     } else {
       // pauta
-     let insulinValue = ''
-     for (const glucoseThreshold in insulinGuidelines) {
+      let insulinValue = ''
+      for (const glucoseThreshold in insulinGuidelines) {
         if (value < parseInt(glucoseThreshold)) {
           insulinValue = insulinGuidelines[glucoseThreshold];
           break;
+        } else {
+          insulinValue = 18;
         }
-      } 
-      setInsulinAux(insulinValue);
+      }
+      setInsulinAux(insulinValue + ' unidades');
+      controlSlow(); 
     }
   };
 
@@ -95,7 +105,7 @@ const BloodGlucoseForm = () => {
     // Guarda los datos en Firebase Realtime Database
     const database = getDatabase(firebaseApp);
     const formDataRef = ref(database, 'formData');
-    
+
     push(formDataRef, data)
       .then(() => {
         setBloodGlucose('');
@@ -110,6 +120,7 @@ const BloodGlucoseForm = () => {
 
   return (
     <div className='form-container'>
+      <div className='reminder-insuline'>{slowMessage}</div><br/>
       <img className='label-image' src="/gluco.png" alt="Glucose label" />
       <input
         className={`form-input${bloodGlucose ? '' : ' error'}`}

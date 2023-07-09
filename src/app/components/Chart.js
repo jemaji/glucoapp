@@ -11,13 +11,21 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-const Chart = ({ glucoseData, insulinData }) => {
+const Chart = ({ glucoseData = [], insulinData = [] }) => {
   const [selectedMonth, setSelectedMonth] = useState('');
+  const [selectedYear, setSelectedYear] = useState('');
   const [availableMonths, setAvailableMonths] = useState([]);
+  const [availableYears, setAvailableYears] = useState([]);
 
-  // Filtrar los datos por el mes seleccionado
-  const filteredGlucoseData = glucoseData.filter(entry => entry.date.includes(selectedMonth));
-  const filteredInsulinData = insulinData.filter(entry => entry.date.includes(selectedMonth));
+  // Filtrar los datos por el mes y año seleccionados
+  const filteredGlucoseData = glucoseData.filter(entry => {
+    const [month, year] = entry.date.split('/');
+    return selectedMonth === month && selectedYear === year;
+  });
+  const filteredInsulinData = insulinData.filter(entry => {
+    const [month, year] = entry.date.split('/');
+    return selectedMonth === month && selectedYear === year;
+  });
 
   const chartData = filteredGlucoseData.map((entry, index) => ({
     date: entry.date, // Fecha
@@ -25,16 +33,33 @@ const Chart = ({ glucoseData, insulinData }) => {
     insulina: filteredInsulinData[index].value, // Valor de insulina
   }));
 
-  const handleMonthChange = (month) => {
-    setSelectedMonth(month);
+  const glucoseValues = filteredGlucoseData.map(entry => entry.value);
+  const glucoseMax = Math.max(...glucoseValues); // Valor máximo de glucosa
+  const glucoseMin = Math.min(...glucoseValues); // Valor mínimo de glucosa
+
+  const insulinValues = filteredInsulinData.map(entry => entry.value);
+  const insulinMax = Math.max(...insulinValues); // Valor máximo de glucosa
+  const insulinMin = Math.min(...insulinValues); // Valor mínimo de glucosa
+
+  const handleMonthChange = (event) => {
+    setSelectedMonth(event.target.value);
+  };
+
+  const handleYearChange = (event) => {
+    setSelectedYear(event.target.value);
   };
 
   useEffect(() => {
-    // Obtener los meses disponibles en los datos
-    const months = glucoseData.map(entry => entry.date.slice(0, 7));
+    // Obtener los meses y años disponibles en los datos
+    const months = glucoseData.map(entry => entry.date.split('/')[1]);
     const uniqueMonths = [...new Set(months)];
     setAvailableMonths(uniqueMonths);
     setSelectedMonth(uniqueMonths[0]); // Establecer el primer mes como seleccionado inicialmente
+
+    const years = glucoseData.map(entry => entry.date.split('/')[2].split(',')[0]);
+    const uniqueYears = [...new Set(years)];
+    setAvailableYears(uniqueYears);
+    setSelectedYear(uniqueYears[0]); // Establecer el primer año como seleccionado inicialmente
   }, [glucoseData]);
 
   const formatTick = (value) => {
@@ -44,16 +69,21 @@ const Chart = ({ glucoseData, insulinData }) => {
 
   return (
     <div>
-      <div className="button-container">
-        {availableMonths.map((month) => (
-          <button
-            key={month}
-            onClick={() => handleMonthChange(month)}
-            className={`form-button small-button ${selectedMonth === month ? 'selected' : ''}`}
-          >
-            {month}
-          </button>
-        ))}
+      <div className="selection-container">
+        <select value={selectedMonth} onChange={handleMonthChange} className="form-select">
+          {availableMonths.map(month => (
+            <option key={month} value={month}>
+              {new Date(2023, month - 1, 1).toLocaleString('default', { month: 'long' })}
+            </option>
+          ))}
+        </select>
+        <select value={selectedYear} onChange={handleYearChange} className="form-select">
+          {availableYears.map(year => (
+            <option key={year} value={year}>
+              {year}
+            </option>
+          ))}
+        </select>
       </div>
       <div className="chart-container">
         <ResponsiveContainer width="100%" height={400}>
@@ -69,12 +99,14 @@ const Chart = ({ glucoseData, insulinData }) => {
               yAxisId="left"
               label={{ value: 'Glucosa', angle: -90, position: 'insideLeft', fontSize: 12, fill: 'blue' }}
               tick={{ fontSize: 10, fill: 'blue' }}
+              domain={[glucoseMin, glucoseMax]}
             />
             <YAxis
               yAxisId="right"
               orientation="right"
               label={{ value: 'Insulina', angle: 90, position: 'insideRight', fontSize: 12, fill: 'blue' }}
               tick={{ fontSize: 10, fill: 'blue' }}
+              domain={[insulinMin, insulinMax]}
             />
             <Tooltip />
             <Legend
@@ -84,19 +116,12 @@ const Chart = ({ glucoseData, insulinData }) => {
               height={36}
             />
             <Line type="monotone" dataKey="glucosa" yAxisId="left" stroke="red" strokeWidth={3} name="Glucosa" />
-            <Line type="monotone" dataKey="insulina" yAxisId="right" stroke="green" strokeWidth={1} name="Insulina" />
+            <Line type="monotone" dataKey="insulina" yAxisId="right" stroke="green" strokeWidth={2} name="Insulina" />
           </LineChart>
         </ResponsiveContainer>
       </div>
-      <style jsx>{`
-        .selected {
-          background-color: blue;
-          color: white;
-        }
-      `}</style>
     </div>
   );
 };
 
 export default Chart;
-

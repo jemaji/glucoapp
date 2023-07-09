@@ -96,6 +96,8 @@ h1 {
 }
 
 // HEADER
+/* ... */
+
 .header {
   display: flex;
   align-items: center;
@@ -104,43 +106,84 @@ h1 {
   background-color: #f2f2f2;
 }
 
-.logo img {
-  max-width: 40px; /* Ajusta el valor según tus necesidades */
-  height: auto;
-}
-
-.nav {
+.logo {
   display: flex;
   align-items: center;
 }
 
-.nav.open {
-  flex-direction: column;
+.logo img {
+  max-width: 40px;
+  height: auto;
+  margin-right: 10px;
 }
 
-.nav a {
-  margin-right: 1rem;
-  text-decoration: none;
-  color: #333;
+.header-title {
+  color: $color-azul;
+  margin: 0;
+  font-size: 24px;
 }
 
 .menu-toggle {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-end;
   width: 30px;
   height: 20px;
-  background-color: transparent;
+  background: none;
   border: none;
   cursor: pointer;
   padding: 0;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.3s ease;
 }
 
-.menu-toggle .bar {
+.bar {
   width: 100%;
   height: 3px;
   background-color: $color-azul;
+  transition: transform 0.3s ease;
 }
+
+.menu-toggle.open {
+  height: 12px;
+}
+
+.menu-toggle.open .bar:first-child {
+  transform: rotate(45deg) translate(3px, 3px);
+}
+
+.menu-toggle.open .bar:last-child {
+  transform: rotate(-45deg) translate(3px, -3px);
+}
+
+.nav {
+  display: none;
+  position: absolute;
+  top: 82px;
+  right: 9px;
+  z-index: 10;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav.open {
+  display: block;
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  margin-bottom: 10px;
+}
+
 
 .error-popup {
   position: absolute;
@@ -183,5 +226,36 @@ h1 {
 
 .chart-container {
   width: 100%;
+}
+
+.link {
+  text-decoration: none;
+  color: blue;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+.selection-container {
+  margin: 20px;
+  display: flex;
+}
+
+.form-select {
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid blue;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: blue;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px blue;
 }
 
