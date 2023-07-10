@@ -16,37 +16,52 @@ const Chart = ({ glucoseData = [], insulinData = [] }) => {
   const [selectedYear, setSelectedYear] = useState('');
   const [availableMonths, setAvailableMonths] = useState([]);
   const [availableYears, setAvailableYears] = useState([]);
+  const [chartData, setChartData] = useState([]);
 
-  // Filtrar los datos por el mes y año seleccionados
-  const filteredGlucoseData = glucoseData.filter(entry => {
-    const [month, year] = entry.date.split('/');
-    return selectedMonth === month && selectedYear === year;
-  });
-  const filteredInsulinData = insulinData.filter(entry => {
-    const [month, year] = entry.date.split('/');
-    return selectedMonth === month && selectedYear === year;
-  });
-
-  const chartData = filteredGlucoseData.map((entry, index) => ({
-    date: entry.date, // Fecha
-    glucosa: entry.value, // Valor de glucosa
-    insulina: filteredInsulinData[index].value, // Valor de insulina
-  }));
-
-  const glucoseValues = filteredGlucoseData.map(entry => entry.value);
+  const glucoseValues = glucoseData.map(entry => entry.value);
   const glucoseMax = Math.max(...glucoseValues); // Valor máximo de glucosa
   const glucoseMin = Math.min(...glucoseValues); // Valor mínimo de glucosa
 
-  const insulinValues = filteredInsulinData.map(entry => entry.value);
+  const insulinValues = insulinData.map(entry => entry.value);
   const insulinMax = Math.max(...insulinValues); // Valor máximo de glucosa
   const insulinMin = Math.min(...insulinValues); // Valor mínimo de glucosa
 
   const handleMonthChange = (event) => {
     setSelectedMonth(event.target.value);
+    const filteredGlucoseData = glucoseData.filter(entry => {
+      const [day, month, year] = entry.date.split('/');
+      return selectedMonth === month && selectedYear === year.split(',')[0];
+    });
+    const filteredInsulinData = insulinData.filter(entry => {
+      const [day, month, year] = entry.date.split('/');
+      return selectedMonth === month && selectedYear === year.split(',')[0];
+    });
+
+    const chartData = filteredGlucoseData.map((entry, index) => ({
+      date: entry.date, // Fecha
+      glucosa: entry.value, // Valor de glucosa
+      insulina: filteredInsulinData[index].value, // Valor de insulina
+    }));
+    setChartData(chartData);
   };
 
   const handleYearChange = (event) => {
     setSelectedYear(event.target.value);
+    const filteredGlucoseData = glucoseData.filter(entry => {
+      const [day, month, year] = entry.date.split('/');
+      return selectedMonth === month && selectedYear === year.split(',')[0];
+    });
+    const filteredInsulinData = insulinData.filter(entry => {
+      const [day, month, year] = entry.date.split('/');
+      return selectedMonth === month && selectedYear === year.split(',')[0];
+    });
+
+    const chartData = filteredGlucoseData.map((entry, index) => ({
+      date: entry.date, // Fecha
+      glucosa: entry.value, // Valor de glucosa
+      insulina: filteredInsulinData[index].value, // Valor de insulina
+    }));
+    setChartData(chartData);
   };
 
   useEffect(() => {
@@ -60,6 +75,14 @@ const Chart = ({ glucoseData = [], insulinData = [] }) => {
     const uniqueYears = [...new Set(years)];
     setAvailableYears(uniqueYears);
     setSelectedYear(uniqueYears[0]); // Establecer el primer año como seleccionado inicialmente
+
+    const chartData = glucoseData.map((entry, index) => ({
+      date: entry.date, // Fecha
+      glucosa: entry.value, // Valor de glucosa
+      insulina: insulinData[index].value, // Valor de insulina
+    }));
+    setChartData(chartData);
+
   }, [glucoseData]);
 
   const formatTick = (value) => {
@@ -71,6 +94,9 @@ const Chart = ({ glucoseData = [], insulinData = [] }) => {
     <div>
       <div className="selection-container">
         <select value={selectedMonth} onChange={handleMonthChange} className="form-select">
+          <option key="" value="">
+            Todos
+          </option>
           {availableMonths.map(month => (
             <option key={month} value={month}>
               {new Date(2023, month - 1, 1).toLocaleString('default', { month: 'long' })}
@@ -78,6 +104,9 @@ const Chart = ({ glucoseData = [], insulinData = [] }) => {
           ))}
         </select>
         <select value={selectedYear} onChange={handleYearChange} className="form-select">
+          <option key="" value="">
+            Todos
+          </option>
           {availableYears.map(year => (
             <option key={year} value={year}>
               {year}

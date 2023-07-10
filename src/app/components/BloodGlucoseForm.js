@@ -51,8 +51,7 @@ const BloodGlucoseForm = () => {
 
   const controlSlow = () => {
     const currentHour = getCurrentHour();
-    console.log(currentHour);
-    if (currentHour > 9) {
+    if (currentHour < 9) {
       setSlowMessage('Recuerda las 40 unidades de lenta');
     }
   }
