@@ -1,0 +1,1474 @@
+{
+  "formData": [
+    {
+      "bloodGlucose": "122",
+      "date": "18/5/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "124",
+      "date": "18/5/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "93",
+      "date": "18/5/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "120",
+      "date": "19/5/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "120",
+      "date": "19/5/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "155",
+      "date": "19/5/2023, 20:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "111",
+      "date": "20/5/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "128",
+      "date": "20/5/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "130",
+      "date": "20/5/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "111",
+      "date": "21/5/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "99",
+      "date": "21/5/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "97",
+      "date": "21/5/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "100",
+      "date": "22/5/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "85",
+      "date": "22/5/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "133",
+      "date": "22/5/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "76",
+      "date": "23/5/2023, 08:00:00",
+      "insulin": 10,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "120",
+      "date": "23/5/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "90",
+      "date": "23/5/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "89",
+      "date": "24/5/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "106",
+      "date": "24/5/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "95",
+      "date": "24/5/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "101",
+      "date": "25/5/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "108",
+      "date": "25/5/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "92",
+      "date": "25/5/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "85",
+      "date": "26/5/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "76",
+      "date": "26/5/2023, 14:00:00",
+      "insulin": 10,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "79",
+      "date": "26/5/2023, 20:00:00",
+      "insulin": 10,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "104",
+      "date": "27/5/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "107",
+      "date": "27/5/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "119",
+      "date": "27/5/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "93",
+      "date": "28/5/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "110",
+      "date": "28/5/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "78",
+      "date": "28/5/2023, 20:00:00",
+      "insulin": 10,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "96",
+      "date": "29/5/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "86",
+      "date": "29/5/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "99",
+      "date": "29/5/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "97",
+      "date": "30/5/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "83",
+      "date": "30/5/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "95",
+      "date": "30/5/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "93",
+      "date": "31/5/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "83",
+      "date": "31/5/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "206",
+      "date": "31/5/2023, 20:00:00",
+      "insulin": 15,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "182",
+      "date": "1/6/2023, 08:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "134",
+      "date": "1/6/2023, 14:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "131",
+      "date": "1/6/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "86",
+      "date": "2/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "81",
+      "date": "2/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "87",
+      "date": "2/6/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "101",
+      "date": "3/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "83",
+      "date": "3/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "137",
+      "date": "3/6/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "122",
+      "date": "4/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "93",
+      "date": "4/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "121",
+      "date": "4/6/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "97",
+      "date": "5/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "69",
+      "date": "5/6/2023, 14:00:00",
+      "insulin": 10,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "157",
+      "date": "5/6/2023, 20:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "102",
+      "date": "6/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "188",
+      "date": "6/6/2023, 14:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "125",
+      "date": "6/6/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "97",
+      "date": "7/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "371",
+      "date": "7/6/2023, 14:00:00",
+      "insulin": 18,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "194",
+      "date": "7/6/2023, 20:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "169",
+      "date": "8/6/2023, 08:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "107",
+      "date": "8/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "142",
+      "date": "8/6/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "79",
+      "date": "9/6/2023, 08:00:00",
+      "insulin": 10,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "95",
+      "date": "9/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "111",
+      "date": "9/6/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "108",
+      "date": "10/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "90",
+      "date": "10/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "103",
+      "date": "10/6/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "99",
+      "date": "11/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "117",
+      "date": "11/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "141",
+      "date": "11/6/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "131",
+      "date": "12/6/2023, 08:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "119",
+      "date": "12/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "134",
+      "date": "12/6/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "113",
+      "date": "13/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "99",
+      "date": "13/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "114",
+      "date": "13/6/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "107",
+      "date": "14/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "225",
+      "date": "14/6/2023, 14:00:00",
+      "insulin": 15,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "222",
+      "date": "14/6/2023, 20:00:00",
+      "insulin": 15,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "152",
+      "date": "15/6/2023, 08:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "159",
+      "date": "15/6/2023, 14:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "128",
+      "date": "15/6/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "98",
+      "date": "16/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "129",
+      "date": "16/6/2023, 14:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "174",
+      "date": "16/6/2023, 20:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "92",
+      "date": "17/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "115",
+      "date": "17/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "126",
+      "date": "17/6/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "118",
+      "date": "18/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "146",
+      "date": "18/6/2023, 14:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "153",
+      "date": "18/6/2023, 20:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "129",
+      "date": "19/6/2023, 08:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "84",
+      "date": "19/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "109",
+      "date": "19/6/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "114",
+      "date": "20/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "97",
+      "date": "20/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "132",
+      "date": "20/6/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "128",
+      "date": "21/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "119",
+      "date": "21/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "137",
+      "date": "21/6/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "112",
+      "date": "22/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "210",
+      "date": "22/6/2023, 14:00:00",
+      "insulin": 15,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "131",
+      "date": "22/6/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "122",
+      "date": "23/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "105",
+      "date": "23/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "135",
+      "date": "23/6/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "129",
+      "date": "24/6/2023, 08:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "134",
+      "date": "24/6/2023, 14:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "140",
+      "date": "24/6/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "130",
+      "date": "25/6/2023, 08:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "150",
+      "date": "25/6/2023, 14:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "115",
+      "date": "25/6/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "127",
+      "date": "26/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "107",
+      "date": "26/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "104",
+      "date": "26/6/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "108",
+      "date": "27/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "159",
+      "date": "27/6/2023, 14:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "121",
+      "date": "27/6/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "100",
+      "date": "28/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "103",
+      "date": "28/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "128",
+      "date": "28/6/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "106",
+      "date": "29/6/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "109",
+      "date": "29/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "242",
+      "date": "29/6/2023, 20:00:00",
+      "insulin": 15,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "195",
+      "date": "30/6/2023, 08:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "116",
+      "date": "30/6/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "126",
+      "date": "30/6/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "96",
+      "date": "1/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "99",
+      "date": "1/7/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "97",
+      "date": "1/7/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "106",
+      "date": "2/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "114",
+      "date": "2/7/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "110",
+      "date": "2/7/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "109",
+      "date": "3/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "84",
+      "date": "3/7/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "115",
+      "date": "3/7/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "93",
+      "date": "4/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "105",
+      "date": "4/7/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "146",
+      "date": "4/7/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "113",
+      "date": "5/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "114",
+      "date": "5/7/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "241",
+      "date": "5/7/2023, 20:00:00",
+      "insulin": 15,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "97",
+      "date": "6/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "150",
+      "date": "6/7/2023, 14:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "237",
+      "date": "6/7/2023, 20:00:00",
+      "insulin": 15,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "166",
+      "date": "7/7/2023, 08:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "104",
+      "date": "7/7/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "154",
+      "date": "7/7/2023, 20:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "89",
+      "date": "8/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "84",
+      "date": "8/7/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "107",
+      "date": "8/7/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "97",
+      "date": "9/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "73",
+      "date": "9/7/2023, 14:00:00",
+      "insulin": 10,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "117",
+      "date": "9/7/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "118",
+      "date": "10/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "114",
+      "date": "10/7/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "134",
+      "date": "10/7/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "117",
+      "date": "11/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "158",
+      "date": "11/7/2023, 14:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "146",
+      "date": "11/7/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "112",
+      "date": "12/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "131",
+      "date": "12/7/2023, 14:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "153",
+      "date": "12/7/2023, 20:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "126",
+      "date": "13/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "204",
+      "date": "13/7/2023, 14:00:00",
+      "insulin": 15,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "241",
+      "date": "13/7/2023, 20:00:00",
+      "insulin": 15,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "192",
+      "date": "14/7/2023, 08:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "153",
+      "date": "14/7/2023, 14:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "151",
+      "date": "14/7/2023, 20:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "112",
+      "date": "15/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "112",
+      "date": "15/7/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "131",
+      "date": "15/7/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "102",
+      "date": "16/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "98",
+      "date": "16/7/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "109",
+      "date": "16/7/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "104",
+      "date": "17/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "113",
+      "date": "17/7/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "135",
+      "date": "17/7/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "114",
+      "date": "18/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "132",
+      "date": "18/7/2023, 14:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "137",
+      "date": "18/7/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "146",
+      "date": "19/7/2023, 08:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "198",
+      "date": "19/7/2023, 14:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "124",
+      "date": "19/7/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "124",
+      "date": "20/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "119",
+      "date": "20/7/2023, 14:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "110",
+      "date": "20/7/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "135",
+      "date": "21/7/2023, 08:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "191",
+      "date": "21/7/2023, 14:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "143",
+      "date": "21/7/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "133",
+      "date": "22/7/2023, 08:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "137",
+      "date": "22/7/2023, 14:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "274",
+      "date": "22/7/2023, 20:00:00",
+      "insulin": 16,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "119",
+      "date": "23/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "179",
+      "date": "23/7/2023, 14:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "131",
+      "date": "23/7/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "126",
+      "date": "24/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "143",
+      "date": "24/7/2023, 14:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "137",
+      "date": "24/7/2023, 20:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "119",
+      "date": "25/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "185",
+      "date": "25/7/2023, 14:00:00",
+      "insulin": 14,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "123",
+      "date": "25/7/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "108",
+      "date": "26/7/2023, 08:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "146",
+      "date": "26/7/2023, 14:00:00",
+      "insulin": 13,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    },
+    {
+      "bloodGlucose": "116",
+      "date": "26/7/2023, 20:00:00",
+      "insulin": 12,
+      "userEmail": "jose.mateos.fernandez@gmail.com",
+      "userId": "byJDgkBJT1hB5CaHghxx9CXKmGG2"
+    }
+  ]
+}
