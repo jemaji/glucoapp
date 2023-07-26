@@ -1,4 +1,3 @@
-'use client'
 import React, { useState, useEffect } from 'react';
 import {
   LineChart,
@@ -12,10 +11,6 @@ import {
 } from 'recharts';
 
 const Chart = ({ glucoseData = [], insulinData = [] }) => {
-  const [selectedMonth, setSelectedMonth] = useState('');
-  const [selectedYear, setSelectedYear] = useState('');
-  const [availableMonths, setAvailableMonths] = useState([]);
-  const [availableYears, setAvailableYears] = useState([]);
   const [chartData, setChartData] = useState([]);
 
   const glucoseValues = glucoseData.map(entry => entry.value);
@@ -26,94 +21,40 @@ const Chart = ({ glucoseData = [], insulinData = [] }) => {
   const insulinMax = Math.max(...insulinValues); // Valor máximo de glucosa
   const insulinMin = Math.min(...insulinValues); // Valor mínimo de glucosa
 
-  const handleMonthChange = (event) => {
-    setSelectedMonth(event.target.value);
-    const filteredGlucoseData = glucoseData.filter(entry => {
-      const [day, month, year] = entry.date.split('/');
-      return selectedMonth === month && selectedYear === year.split(',')[0];
-    });
-    const filteredInsulinData = insulinData.filter(entry => {
-      const [day, month, year] = entry.date.split('/');
-      return selectedMonth === month && selectedYear === year.split(',')[0];
-    });
-
-    const chartData = filteredGlucoseData.map((entry, index) => ({
-      date: entry.date, // Fecha
-      glucosa: entry.value, // Valor de glucosa
-      insulina: filteredInsulinData[index].value, // Valor de insulina
-    }));
-    setChartData(chartData);
-  };
-
-  const handleYearChange = (event) => {
-    setSelectedYear(event.target.value);
-    const filteredGlucoseData = glucoseData.filter(entry => {
-      const [day, month, year] = entry.date.split('/');
-      return selectedMonth === month && selectedYear === year.split(',')[0];
-    });
-    const filteredInsulinData = insulinData.filter(entry => {
-      const [day, month, year] = entry.date.split('/');
-      return selectedMonth === month && selectedYear === year.split(',')[0];
-    });
-
-    const chartData = filteredGlucoseData.map((entry, index) => ({
-      date: entry.date, // Fecha
-      glucosa: entry.value, // Valor de glucosa
-      insulina: filteredInsulinData[index].value, // Valor de insulina
-    }));
-    setChartData(chartData);
-  };
-
   useEffect(() => {
-    // Obtener los meses y años disponibles en los datos
-    const months = glucoseData.map(entry => entry.date.split('/')[1]);
-    const uniqueMonths = [...new Set(months)];
-    setAvailableMonths(uniqueMonths);
-    setSelectedMonth(uniqueMonths[0]); // Establecer el primer mes como seleccionado inicialmente
-
-    const years = glucoseData.map(entry => entry.date.split('/')[2].split(',')[0]);
-    const uniqueYears = [...new Set(years)];
-    setAvailableYears(uniqueYears);
-    setSelectedYear(uniqueYears[0]); // Establecer el primer año como seleccionado inicialmente
-
-    const chartData = glucoseData.map((entry, index) => ({
-      date: entry.date, // Fecha
-      glucosa: entry.value, // Valor de glucosa
-      insulina: insulinData[index].value, // Valor de insulina
+    // Procesar y filtrar los datos de glucosa y de insulina para el gráfico
+    const filteredGlucoseData = glucoseData.map(entry => ({
+      date: entry.date,
+      glucosa: entry.value,
     }));
-    setChartData(chartData);
+    const filteredInsulinData = insulinData.map(entry => ({
+      date: entry.date,
+      insulina: entry.value,
+    }));
 
-  }, [glucoseData]);
+    // Combinar los datos filtrados para el gráfico
+    const chartData = filteredGlucoseData.map((entry, index) => ({
+      date: entry.date, // Fecha
+      glucosa: entry.glucosa, // Valor de glucosa
+      insulina: filteredInsulinData[index].insulina, // Valor de insulina
+    }));
+
+    setChartData(chartData);
+  }, [glucoseData, insulinData]);
 
   const formatTick = (value) => {
     const date = new Date(value);
     return date.getDate().toString();
   };
 
+  const parseDate = (dateString) => {
+    const [datePart] = dateString.split(','); // Extraemos solo la parte de la fecha (día/mes/año)
+    const [day, month, year] = datePart.split('/'); // Dividimos en día, mes y año
+    return new Date(Number(year), Number(month) - 1, Number(day)); // Restamos 1 al mes ya que en JavaScript los meses van de 0 a 11
+  };
+
   return (
     <div>
-      <div className="selection-container">
-        <select value={selectedMonth} onChange={handleMonthChange} className="form-select">
-          <option key="" value="">
-            Todos
-          </option>
-          {availableMonths.map(month => (
-            <option key={month} value={month}>
-              {new Date(2023, month - 1, 1).toLocaleString('default', { month: 'long' })}
-            </option>
-          ))}
-        </select>
-        <select value={selectedYear} onChange={handleYearChange} className="form-select">
-          <option key="" value="">
-            Todos
-          </option>
-          {availableYears.map(year => (
-            <option key={year} value={year}>
-              {year}
-            </option>
-          ))}
-        </select>
-      </div>
       <div className="chart-container">
         <ResponsiveContainer width="100%" height={400}>
           <LineChart data={chartData}>
@@ -121,7 +62,8 @@ const Chart = ({ glucoseData = [], insulinData = [] }) => {
             <XAxis
               dataKey="date"
               tick={{ fontSize: 10, fill: 'blue' }}
-              tickFormatter={formatTick}
+              type='category'
+              tickFormatter={(value) => parseDate(value).getDate().toString()} // Convertimos las fechas al formato deseado
               label={{ value: 'Fecha', position: 'top', fontSize: 12, fill: 'blue' }}
             />
             <YAxis

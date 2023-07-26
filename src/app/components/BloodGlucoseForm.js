@@ -1,20 +1,9 @@
 'use client'
 import React, { useState } from 'react';
-import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, push } from 'firebase/database';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyB1rUWZHhUTUAqoEOr9TgfWYS68-SIwczY",
-  authDomain: "gluinsapp.firebaseapp.com",
-  databaseURL: "https://gluinsapp-default-rtdb.europe-west1.firebasedatabase.app", // Actualiza la URL de la base de datos aquí
-  projectId: "gluinsapp",
-  storageBucket: "gluinsapp.appspot.com",
-  messagingSenderId: "294375015945",
-  appId: "1:294375015945:web:bec406427d930497c09ad8"
-};
-
-// Inicializa la app de Firebase
-const firebaseApp = initializeApp(firebaseConfig);
+import Message from '@/app/components/Message';
+import withAuth from '@/app/services/withAuth';
+import firebaseService from '@/app/services/firebaseService';
+import { useAuth } from '@/app/services/firebaseService';
 
 const insulinGuidelines = {
   80: 10,    // Glucosa < 80
@@ -32,7 +21,7 @@ const BloodGlucoseForm = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [reminderMessage, setReminderMessage] = useState('');
   const [slowMessage, setSlowMessage] = useState('');
-
+  const { user } = useAuth();
 
   const getCurrentHour = () => {
     const date = new Date();
@@ -46,7 +35,7 @@ const BloodGlucoseForm = () => {
         setReminderMessage('Recuerda purgar el bolígrafo con 2 unidades');
       }
     }
-    setInsulin(insulin_);
+    setInsulin(insulin_.split(" ")[0]);
   }
 
   const controlSlow = () => {
@@ -80,46 +69,45 @@ const BloodGlucoseForm = () => {
         }
       }
       setInsulinAux(insulinValue + ' unidades');
-      controlSlow(); 
+      controlSlow();
     }
   };
 
-  const handleSaveData = () => {
-    if (!bloodGlucose) {
-      setError('¡Por favor, ingresa un valor para la glucosa!');
-      return;
-    }
+  const handleSaveData = async () => {
+    try {
+      if (!bloodGlucose) {
+        setError('¡Por favor, ingresa un valor para la glucosa!');
+        return;
+      }
 
-    if (!/^\d+$/.test(bloodGlucose)) {
-      setError('¡La glucosa solo debe contener caracteres numéricos!');
-      return;
-    }
+      if (!/^\d+$/.test(bloodGlucose)) {
+        setError('¡La glucosa solo debe contener caracteres numéricos!');
+        return;
+      }
 
-    const data = {
-      bloodGlucose,
-      insulin,
-      date: new Date().toLocaleString()
+      const data = {
+        bloodGlucose,
+        insulin,
+        date: new Date().toLocaleString(),
+      };
+
+      await firebaseService.saveData(data, user);
+
+      setBloodGlucose('');
+      setInsulinAux('');
+      setSuccessMessage('¡Guardado exitosamente!');
+      setReminderMessage('');
+      setSlowMessage('');
+      setTimeout(() => setSuccessMessage(''), 2000);
+
+    } catch (error) {
+      setError(`¡Error al guardar: ${error.message}`);
     };
-
-    // Guarda los datos en Firebase Realtime Database
-    const database = getDatabase(firebaseApp);
-    const formDataRef = ref(database, 'formData');
-
-    push(formDataRef, data)
-      .then(() => {
-        setBloodGlucose('');
-        setInsulinAux('');
-        setSuccessMessage('¡Guardado exitosamente!');
-        setTimeout(() => setSuccessMessage(''), 2000);
-      })
-      .catch((error) => {
-        setError(`¡Error al guardar: ${error.message}`);
-      });
   };
 
   return (
     <div className='form-container'>
-      <div className='reminder-insuline'>{slowMessage}</div><br/>
+      <div className='reminder-insuline'>{slowMessage}</div><br />
       <img className='label-image' src="/gluco.png" alt="Glucose label" />
       <input
         className={`form-input${bloodGlucose ? '' : ' error'}`}
@@ -138,18 +126,11 @@ const BloodGlucoseForm = () => {
         placeholder="Insulina"
       />
       <button className='form-button' onClick={handleSaveData}>Guardar</button>
-      {errorMessage && (
-        <div className="error-popup">
-          <p>{errorMessage}</p>
-        </div>
-      )}
-      {successMessage && (
-        <div className="success-popup">
-          <p>{successMessage}</p>
-        </div>
-      )}
+      {/* Utiliza el componente FeedbackMessage para mostrar los mensajes */}
+      {errorMessage && <Message message={errorMessage} type="error" />}
+      {successMessage && <Message message={successMessage} type="success" />}
     </div>
   );
 };
 
-export default BloodGlucoseForm;
+export default withAuth(BloodGlucoseForm);
