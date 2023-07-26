@@ -99,4 +99,6 @@ const ChartsPage = () => {
   );
 };
 
+ChartsPage.displayName = 'ChartsPage';
+
 export default withAuth(ChartsPage);

@@ -133,4 +133,6 @@ const BloodGlucoseForm = () => {
   );
 };
 
+BloodGlucoseForm.displayName = 'BloodGlucoseForm';
+
 export default withAuth(BloodGlucoseForm);

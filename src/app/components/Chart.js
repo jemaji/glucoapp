@@ -9,6 +9,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
+import withAuth from '../services/withAuth';
 
 const Chart = ({ glucoseData = [], insulinData = [] }) => {
   const [chartData, setChartData] = useState([]);
@@ -120,4 +121,6 @@ const Chart = ({ glucoseData = [], insulinData = [] }) => {
   );
 };
 
-export default Chart;
+Chart.displayName = 'Chart';
+
+export default withAuth(Chart);

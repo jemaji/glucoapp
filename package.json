@@ -16,6 +16,7 @@
     "eslint-config-next": "13.4.7",
     "firebase": "^9.23.0",
     "firebaseui": "^6.0.2",
+    "hoist-non-react-statics": "^3.3.2",
     "next": "13.4.7",
     "next-auth": "^4.22.1",
     "react": "18.2.0",
@@ -23,5 +24,8 @@
     "recharts": "^2.7.2",
     "sass": "^1.63.6",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@types/hoist-non-react-statics": "^3.3.1"
   }
 }
