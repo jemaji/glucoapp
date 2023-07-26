@@ -294,3 +294,72 @@ h1 {
 .message.success {
   color: green;
 }
+
+/* Estilos para la tabla */
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-container th,
+.table-container td {
+  padding: 12px;
+  text-align: center;
+  font-size: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Estilos para las celdas de la tabla */
+.table-container td {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Estilos para las celdas de insulina en verde */
+.table-container td:nth-child(3) {
+  color: green;
+}
+
+/* Estilos para las celdas de glucosa en rojo */
+.table-container td:nth-child(2) {
+  color: red;
+}
+
+/* Estilos para las celdas de fecha en azul */
+.table-container td:first-child {
+  color: blue;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.title-container span {
+  font-size: 16px;
+}
+
+.table-container {
+  font-size: 16px;
+}
+
+/* Ajustar estilos de la tabla como bordes redondeados y separaciones entre celdas */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+

@@ -53,6 +53,8 @@ const Chart = ({ glucoseData = [], insulinData = [] }) => {
     return new Date(Number(year), Number(month) - 1, Number(day)); // Restamos 1 al mes ya que en JavaScript los meses van de 0 a 11
   };
 
+  const lastSixData = chartData.slice(-6);
+
   return (
     <div>
       <div className="chart-container">
@@ -90,6 +92,29 @@ const Chart = ({ glucoseData = [], insulinData = [] }) => {
             <Line type="monotone" dataKey="insulina" yAxisId="right" stroke="green" strokeWidth={2} name="Insulina" />
           </LineChart>
         </ResponsiveContainer>
+      </div>
+      <div className="table-container">
+        <div className="title-container">
+          <span>Últimos 6 datos introducidos</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Glucosa</th>
+              <th>Insulina</th>
+            </tr>
+          </thead>
+          <tbody>
+            {lastSixData.map((entry) => (
+              <tr key={entry.date}>
+                <td>{entry.date}</td>
+                <td>{entry.glucosa}</td>
+                <td>{entry.insulina}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
