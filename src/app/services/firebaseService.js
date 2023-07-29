@@ -112,7 +112,7 @@ const firebaseService = {
       const userFormData = [];
       snapshot.forEach((childSnapshot) => {
         // no tenemos en cuenta registros de configuracion
-        if (childSnapshot.key === 'config') {
+        if (!childSnapshot.val().bloodGlucose) {
           return
         }
         const data = childSnapshot.val();
