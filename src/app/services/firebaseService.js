@@ -5,13 +5,13 @@ import { createContext, useContext, useState, useEffect } from 'react';
 
 // Configura la conexión con Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyB1rUWZHhUTUAqoEOr9TgfWYS68-SIwczY",
-    authDomain: "gluinsapp.firebaseapp.com",
-    databaseURL: "https://gluinsapp-default-rtdb.europe-west1.firebasedatabase.app", // Actualiza la URL de la base de datos aquí
-    projectId: "gluinsapp",
-    storageBucket: "gluinsapp.appspot.com",
-    messagingSenderId: "294375015945",
-    appId: "1:294375015945:web:bec406427d930497c09ad8"
+  apiKey: "AIzaSyB1rUWZHhUTUAqoEOr9TgfWYS68-SIwczY",
+  authDomain: "gluinsapp.firebaseapp.com",
+  databaseURL: "https://gluinsapp-default-rtdb.europe-west1.firebasedatabase.app", // Actualiza la URL de la base de datos aquí
+  projectId: "gluinsapp",
+  storageBucket: "gluinsapp.appspot.com",
+  messagingSenderId: "294375015945",
+  appId: "1:294375015945:web:bec406427d930497c09ad8"
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
@@ -25,6 +25,32 @@ const firebaseService = {
   getCurrentUser: () => {
     return auth.currentUser;
   },
+
+  // Función para obtener un dato específico por su clave (key) en Firebase
+  getDataByKey: async (key) => {
+    try {
+      // Obtener una referencia específica al dato que quieres obtener por su clave (key)
+      const dataRef = ref(database, `formData/${key}`); // Reemplaza "ruta/del/dato" por la ruta real del dato en tu base de datos
+
+      // Ejecutar el método get para obtener el dato
+      const snapshot = await get(dataRef);
+
+      // Comprobar si el dato existe
+      if (snapshot.exists()) {
+        // El dato existe, puedes obtener su valor utilizando el método val()
+        const dato = snapshot.val();
+        return dato;
+      } else {
+        // El dato no existe o es nulo
+        console.log('El dato no existe en Firebase.');
+        return null;
+      }
+    } catch (error) {
+      console.error('Error al obtener el dato en Firebase:', error);
+      throw error;
+    }
+  },
+
   // Función para obtener datos de Firebase
   getData: async () => {
     try {
@@ -85,6 +111,10 @@ const firebaseService = {
       // Filtrar los datos por mes y/o año
       const userFormData = [];
       snapshot.forEach((childSnapshot) => {
+        // no tenemos en cuenta registros de configuracion
+        if (childSnapshot.key === 'config') {
+          return
+        }
         const data = childSnapshot.val();
         // Obtener el mes y el año de la fecha
         const [day, monthData, yearData] = data.date.split('/');
@@ -107,6 +137,43 @@ const firebaseService = {
       return userFormData;
     } catch (error) {
       console.error('Error al obtener los datos del usuario en Firebase:', error);
+      throw error;
+    }
+  },
+
+  getReadingsForToday: async (user) => {
+    try {
+      // Obtener la fecha de hoy en formato 'dd/mm/yyyy'
+      const todayDate = new Date().toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+      });
+
+      // Obtener la referencia a la base de datos de Firebase y aplicar el filtro por userId
+      const databaseRef = ref(database, 'formData');
+      const userQuery = query(databaseRef, orderByChild('userId'), equalTo(user.uid));
+
+      // Ejecutar la consulta en Firebase y obtener los resultados
+      const snapshot = await get(userQuery);
+
+      // Filtrar manualmente los datos para obtener las lecturas del día de hoy
+      const readingsForToday = [];
+      snapshot.forEach((childSnapshot) => {
+        const data = childSnapshot.val();
+        const [datePart] = data.date.split(',');
+        const [day, month, year] = datePart.trim().split('/');
+        const formattedMonth = month.length === 1 ? `0${month}` : month;
+        const formattedDate = `${day}/${formattedMonth}/${year}`;
+        // Comprobar si la fecha coincide con el día de hoy
+        if (formattedDate === todayDate) {
+          readingsForToday.push(data);
+        }
+      });
+
+      return readingsForToday;
+    } catch (error) {
+      console.error('Error al obtener las lecturas del día de hoy en Firebase:', error);
       throw error;
     }
   },
