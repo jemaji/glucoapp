@@ -22,7 +22,7 @@ const defaultPauta = {
   lentabaja: 0,
   r0: 8,
   r2: 8,
-  r3: 8,
+  r4: 8,
 }
 
 let userId = '';
