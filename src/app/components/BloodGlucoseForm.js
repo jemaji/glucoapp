@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Message from '@/app/components/Message';
 import withAuth from '@/app/services/withAuth';
 import firebaseService from '@/app/services/firebaseService';
@@ -13,6 +13,7 @@ const BloodGlucoseForm = () => {
   const [reminderMessage, setReminderMessage] = useState('');
   const [slowMessage, setSlowMessage] = useState('');
   const { user } = useAuth();
+  const inputRef = useRef(null);
   const [pautaData, setPautaData] = useState(null);
   const [todayData, setTodayData] = useState([]);
 
@@ -162,17 +163,27 @@ const BloodGlucoseForm = () => {
     };
   };
 
+  const handleNextField = (event) => {
+    // Ocultar el teclado desenfocando el campo de entrada
+    if (event.key === 'Enter') {
+      inputRef?.current?.blur();
+    }
+    // Aquí puedes agregar lógica adicional para pasar al siguiente campo si lo deseas
+  };
+
   return (
     <div className='form-container'>
       <div className='reminder-insuline'>{slowMessage}</div><br />
       <img className='label-image' src="/gluco.png" alt="Glucose label" />
       <input
+        ref={inputRef}
         className={`form-input${bloodGlucose ? '' : ' error'}`}
         type="text"
         inputMode="numeric" // Indica que se debe mostrar el teclado numérico
         pattern="[0-9]*"
         value={bloodGlucose}
         onChange={handleBloodGlucoseChange}
+        onKeyDown={handleNextField}
         placeholder="Glucosa"
       />
       {todayData.length % 2 == 0 && (
