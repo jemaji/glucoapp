@@ -50,6 +50,21 @@ const firebaseService = {
       throw error;
     }
   },
+  
+  savePauta: async (pautaData) => {
+    try {
+      // Obtener una referencia a la base de datos de Firebase y la referencia específica al nodo 'formData'
+      const configRef = ref(database, 'formData/config');
+
+      // Utilizar el método set para guardar la pauta en Firebase dentro del nodo 'config'
+      await set(configRef, pautaData);
+
+      console.log('Pauta guardada exitosamente en Firebase');
+    } catch (error) {
+      console.error('Error al guardar la pauta en Firebase:', error);
+      throw error;
+    }
+  },
 
   // Función para obtener datos de Firebase
   getData: async () => {
