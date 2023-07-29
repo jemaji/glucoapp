@@ -151,8 +151,8 @@ const firebaseService = {
         const yearMatch = !selectedYear || dataYear === Number(selectedYear);
 
         if (selectedHalf && selectedMonth) {
-          const isSecondHalf = selectedHalf === '2';
-          const isFirstHalf = selectedHalf === '1';
+          const isSecondHalf = parseInt(selectedHalf) === 2;
+          const isFirstHalf = parseInt(selectedHalf) === 1;
           if (isSecondHalf && dataMonth === Number(selectedMonth) && Number(day) > middleDay) {
             userFormData.push(data);
           } else if (isFirstHalf && dataMonth === Number(selectedMonth) && Number(day) <= middleDay) {

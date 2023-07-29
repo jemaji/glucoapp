@@ -13,7 +13,6 @@ import withAuth from '../services/withAuth';
 
 const Chart = ({ glucoseData = [], insulinData = []}) => {
   const [chartData, setChartData] = useState([]);
-
   
   const glucoseValues = glucoseData.map(entry => entry.bloodGlucose);
   const glucoseMax = Math.max(...glucoseValues); // Valor máximo de glucosa
