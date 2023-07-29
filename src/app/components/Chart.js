@@ -11,10 +11,11 @@ import {
 } from 'recharts';
 import withAuth from '../services/withAuth';
 
-const Chart = ({ glucoseData = [], insulinData = [] }) => {
+const Chart = ({ glucoseData = [], insulinData = []}) => {
   const [chartData, setChartData] = useState([]);
 
-  const glucoseValues = glucoseData.map(entry => entry.value);
+  
+  const glucoseValues = glucoseData.map(entry => entry.bloodGlucose);
   const glucoseMax = Math.max(...glucoseValues); // Valor máximo de glucosa
   const glucoseMin = Math.min(...glucoseValues); // Valor mínimo de glucosa
 
@@ -24,20 +25,27 @@ const Chart = ({ glucoseData = [], insulinData = [] }) => {
 
   useEffect(() => {
     // Procesar y filtrar los datos de glucosa y de insulina para el gráfico
-    const filteredGlucoseData = glucoseData.map(entry => ({
-      date: entry.date,
-      glucosa: entry.value,
-    }));
+    const filteredGlucoseData = glucoseData.filter(elem => elem.insulin !== 0)
+    let filteredGlucoseAfterData = glucoseData.filter(elem => elem.insulin === 0)
+
+    // emparejar array de glucose con array de after a través de la fecha
+    if (filteredGlucoseAfterData.length > 0) {
+      const date = filteredGlucoseAfterData[0].date.split(" ")[0];
+      const undefinedPositions = filteredGlucoseData.filter(elem => elem.date.split(" ")[0] !== date).map(e=>undefined);
+      filteredGlucoseAfterData = [...undefinedPositions, ...filteredGlucoseAfterData];
+    }
+    
     const filteredInsulinData = insulinData.map(entry => ({
       date: entry.date,
       insulina: entry.value,
-    }));
+    })).filter(elem => elem.insulina !== 0);
 
     // Combinar los datos filtrados para el gráfico
     const chartData = filteredGlucoseData.map((entry, index) => ({
       date: entry.date, // Fecha
-      glucosa: entry.glucosa, // Valor de glucosa
-      insulina: filteredInsulinData[index].insulina, // Valor de insulina
+      glucosa: entry.bloodGlucose, // Valor de glucosa
+      insulina: filteredInsulinData[index]?.insulina, // Valor de insulina
+      glucoseAfter: filteredGlucoseAfterData[index]?.bloodGlucose,
     }));
 
     setChartData(chartData);
@@ -90,6 +98,7 @@ const Chart = ({ glucoseData = [], insulinData = [] }) => {
               height={36}
             />
             <Line type="monotone" dataKey="glucosa" yAxisId="left" stroke="red" strokeWidth={3} name="Glucosa" />
+            <Line type="monotone" dataKey="glucoseAfter" yAxisId="left" stroke="blue" strokeWidth={3} name="Glucosa(2h)" />
             <Line type="monotone" dataKey="insulina" yAxisId="right" stroke="green" strokeWidth={2} name="Insulina" />
           </LineChart>
         </ResponsiveContainer>
@@ -104,6 +113,7 @@ const Chart = ({ glucoseData = [], insulinData = [] }) => {
               <th>Fecha</th>
               <th>Glucosa</th>
               <th>Insulina</th>
+              <th>Glucosa(2h)</th>
             </tr>
           </thead>
           <tbody>
@@ -112,6 +122,7 @@ const Chart = ({ glucoseData = [], insulinData = [] }) => {
                 <td>{entry.date}</td>
                 <td>{entry.glucosa}</td>
                 <td>{entry.insulina}</td>
+                <td>{entry.glucoseAfter}</td>
               </tr>
             ))}
           </tbody>
