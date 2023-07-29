@@ -74,7 +74,8 @@ h1 {
   cursor: pointer;
   width: 100%;
   font-size: 24px;
-  margin-top: 50px;display: flex;
+  margin-top: 50px;
+  display: flex;
   align-items: center;
   gap: 10px;
   justify-content: center;
@@ -88,6 +89,43 @@ h1 {
 .form-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.navigation-buttons {
+
+}
+
+.selects-container, 
+.navigation-buttons {
+  display: flex;
+  gap: 10px; /* Espacio entre los elementos */
+  align-items: center; /* Alinear verticalmente */
+  margin: 0 10px 0 10px;
+  margin-bottom: 10px;
+}
+
+.form-button-navigation {
+  border-radius: 5px;
+  background-color: $color-blanco;
+  color: $color-azul;
+  border: 2px solid $color-azul;
+  cursor: pointer;
+  padding: 3px 10px 3px 10px;
+}
+
+.form-button-navigation:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 768px) {
+  .selections-container {
+    flex-direction: column; /* Cambiar el diseño a columna en pantallas pequeñas */
+  }
+
+  .navigation-buttons {
+    /* Espacio entre los grupos de elementos */
+  }
 }
 
 .form-link {
@@ -248,8 +286,10 @@ h1 {
 }
 
 .selection-container {
-  margin: 20px;
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px 0 10px 0;
 }
 
 .form-select {

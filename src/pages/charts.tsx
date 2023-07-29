@@ -72,36 +72,81 @@ const ChartsPage = () => {
     setSelectedYear(event.target.value);
   };
 
+  const handlePreviousHalf = () => {
+    // Obtener el valor actual del combo de quincenas
+    let currentHalf: any = selectedHalf || 1;
+    // Restar 1 a la quincena actual
+    currentHalf -= 1;
+    if (currentHalf < 1) {
+      // Si la quincena es menor a 1, ajustarla a 1
+      currentHalf = 2;
+      const indexOfCurrentMonth = availableMonths.indexOf(selectedMonth);
+      if (indexOfCurrentMonth-1 < 0) {
+        setSelectedMonth(availableMonths[availableMonths.length-1]);
+      } else {
+        setSelectedMonth(availableMonths[indexOfCurrentMonth-1]);
+      }
+    }
+    // Actualizar el estado con la nueva quincena seleccionada
+    setSelectedHalf(currentHalf);
+  };
+
+  const handleNextHalf = () => {
+    // Obtener el valor actual del combo de quincenas
+    let currentHalf: any = selectedHalf || 1;
+    // Sumar 1 a la quincena actual
+    currentHalf = currentHalf + 1;
+    if (currentHalf > 2) {
+      // Si la quincena es mayor a 2, ajustarla a 2
+      currentHalf = 1;
+      const indexOfCurrentMonth = availableMonths.indexOf(selectedMonth);
+      if (indexOfCurrentMonth-1 == availableMonths.length) {
+        setSelectedMonth(availableMonths[0]);
+      } else {
+        setSelectedMonth(availableMonths[indexOfCurrentMonth+1]);
+      }
+    }
+    // Actualizar el estado con la nueva quincena seleccionada
+    setSelectedHalf(currentHalf);
+  };
+
+
   return (
     <div className="page-content">
       <div className="selection-container">
-        <select value={selectedHalf} onChange={handleHalfChange} className="form-select">
-          <option key="" value="">
-            Mitad
-          </option>
-          <option key="1" value="1">Primera</option>
-          <option key="2" value="2">Segunda</option>
-        </select>
-        <select value={selectedMonth} onChange={handleMonthChange} className="form-select">
-          <option key="" value="">
-            Meses
-          </option>
-          {availableMonths.map((month) => (
-            <option key={month} value={month}>
-              {new Date(2023, parseInt(month) - 1, 1).toLocaleString('default', { month: 'long' })}
+        <div className='selects-container'>
+          <select value={selectedHalf} onChange={handleHalfChange} className="form-select">
+            <option key="" value="">
+              Mitad
             </option>
-          ))}
-        </select>
-        <select value={selectedYear} onChange={handleYearChange} className="form-select">
-          <option key="" value="">
-            Años
-          </option>
-          {availableYears.map((year) => (
-            <option key={year} value={year}>
-              {year}
+            <option key="1" value="1">Primera</option>
+            <option key="2" value="2">Segunda</option>
+          </select>
+          <select value={selectedMonth} onChange={handleMonthChange} className="form-select">
+            <option key="" value="">
+              Meses
             </option>
-          ))}
-        </select>
+            {availableMonths.map((month) => (
+              <option key={month} value={month}>
+                {new Date(2023, parseInt(month) - 1, 1).toLocaleString('default', { month: 'long' })}
+              </option>
+            ))}
+          </select>
+          <select value={selectedYear} onChange={handleYearChange} className="form-select">
+            <option key="" value="">
+              Años
+            </option>
+            {availableYears.map((year) => (
+              <option key={year} value={year}>
+                {year}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="navigation-buttons">
+          <button className='form-button-navigation' onClick={handlePreviousHalf} disabled={selectedMonth==''}>Anterior</button>
+          <button className='form-button-navigation' onClick={handleNextHalf} disabled={selectedMonth==''}>Siguiente</button>
+        </div>
       </div>
       <Chart glucoseData={glucoseData} insulinData={insulinData} />
       {errorMessage && <Message message={errorMessage} type="error" />}
