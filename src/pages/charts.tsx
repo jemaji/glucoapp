@@ -100,7 +100,7 @@ const ChartsPage = () => {
       // Si la quincena es mayor a 2, ajustarla a 2
       currentHalf = 1;
       const indexOfCurrentMonth = availableMonths.indexOf(selectedMonth);
-      if (indexOfCurrentMonth-1 == availableMonths.length) {
+      if (indexOfCurrentMonth+1 == availableMonths.length) {
         setSelectedMonth(availableMonths[0]);
       } else {
         setSelectedMonth(availableMonths[indexOfCurrentMonth+1]);
