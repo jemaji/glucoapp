@@ -25,10 +25,13 @@ const BloodGlucoseForm = () => {
         // Manejar errores si es necesario
         setError('Error al obtener lecturas del día:', error);
       });
-    firebaseService.getDataByKey('config')
+    firebaseService.getDataByKeyAndUser('config', user.uid)
       .then((dato) => {
         // Actualizamos el estado con la pauta obtenida desde Firebase
-        setPautaData(dato);
+        if (!dato) {
+          firebaseService.saveConfigKey('pauta', firebaseService.defaultPauta(), user.uid);
+        }
+        setPautaData(dato?.pauta || firebaseService.defaultPauta);
       })
       .catch((error) => {
         // Manejar errores si es necesario
@@ -143,7 +146,7 @@ const BloodGlucoseForm = () => {
       await firebaseService.saveData(data, user);
       controlPautaInsulinaRapida();
       controlPautaInsulinaLenta();
-      await firebaseService.savePauta(pautaData);
+      await firebaseService.saveKey('pauta', data, user);
       setTodayData([...todayData, data])
 
       setBloodGlucose('');

@@ -2,6 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push, set, get, query, orderByChild, equalTo } from 'firebase/database';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth';
 import { createContext, useContext, useState, useEffect } from 'react';
+import { defaultConfig } from 'next/dist/server/config-shared';
 
 // Configura la conexión con Firebase
 const firebaseConfig = {
@@ -14,6 +15,17 @@ const firebaseConfig = {
   appId: "1:294375015945:web:bec406427d930497c09ad8"
 };
 
+const defaultPauta = {
+  comienzo: "29/07/2023",
+  day: 0,
+  lenta: 35,
+  lentabaja: 0,
+  r0: 8,
+  r2: 8,
+  r3: 8,
+}
+
+let userId = '';
 const firebaseApp = initializeApp(firebaseConfig);
 const database = getDatabase(firebaseApp);
 const auth = getAuth(firebaseApp);
@@ -22,15 +34,12 @@ const provider = new GoogleAuthProvider();
 const AuthContext = createContext(null);
 
 const firebaseService = {
-  getCurrentUser: () => {
-    return auth.currentUser;
-  },
-
+  defaultPauta: () => defaultPauta,
   // Función para obtener un dato específico por su clave (key) en Firebase
-  getDataByKey: async (key) => {
+  getDataByKeyAndUser: async (key, uid) => {
     try {
       // Obtener una referencia específica al dato que quieres obtener por su clave (key)
-      const dataRef = ref(database, `formData/${key}`); // Reemplaza "ruta/del/dato" por la ruta real del dato en tu base de datos
+      const dataRef = ref(database, `formData/${uid}/${key}`); // Reemplaza "ruta/del/dato" por la ruta real del dato en tu base de datos
 
       // Ejecutar el método get para obtener el dato
       const snapshot = await get(dataRef);
@@ -50,18 +59,18 @@ const firebaseService = {
       throw error;
     }
   },
-  
-  savePauta: async (pautaData) => {
+
+  saveConfigKey: async (prop, data, uid) => {
     try {
       // Obtener una referencia a la base de datos de Firebase y la referencia específica al nodo 'formData'
-      const configRef = ref(database, 'formData/config');
+      const configRef = ref(database, `formData/${uid}/config/${prop}`);
 
       // Utilizar el método set para guardar la pauta en Firebase dentro del nodo 'config'
-      await set(configRef, pautaData);
+      await set(configRef, data);
 
-      console.log('Pauta guardada exitosamente en Firebase');
+      console.log('Key guardada exitosamente en Firebase');
     } catch (error) {
-      console.error('Error al guardar la pauta en Firebase:', error);
+      console.error('Error al guardar key en Firebase:', error);
       throw error;
     }
   },
@@ -239,6 +248,8 @@ const firebaseService = {
     try {
       const provider = new GoogleAuthProvider();
       const userCredential = await signInWithPopup(auth, provider);
+      userId = userCredential.user.uid;
+
       return true;
     } catch (error) {
       console.error('Error al iniciar sesión con Google:', error);
