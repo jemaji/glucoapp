@@ -41,7 +41,7 @@ const BloodGlucoseForm = () => {
   const controlSlow = () => {
     const currentHour = getCurrentHour();
     if (currentHour < 9) {
-      setSlowMessage('Recuerda las 40 unidades de lenta');
+      setSlowMessage('Recuerda las 35 unidades de lenta');
     }
   }
 
@@ -68,7 +68,7 @@ const BloodGlucoseForm = () => {
           insulinValue = 18;
         }
       }
-      setInsulinAux(insulinValue + ' unidades');
+      setInsulinAux(8 + ' unidades');
       controlSlow();
     }
   };
