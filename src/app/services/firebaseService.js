@@ -136,7 +136,7 @@ const firebaseService = {
       const userFormData = [];
       snapshot.forEach((childSnapshot) => {
         // no tenemos en cuenta registros de configuracion
-        if (childSnapshot.key === 'config') {
+        if (!childSnapshot.val().bloodGlucose) {
           return
         }
         const data = childSnapshot.val();
@@ -178,12 +178,19 @@ const firebaseService = {
       const databaseRef = ref(database, 'formData');
       const userQuery = query(databaseRef, orderByChild('userId'), equalTo(user.uid));
 
-      // Ejecutar la consulta en Firebase y obtener los resultados
-      const snapshot = await get(userQuery);
+      let snapshot;
+      if (user.uid === "56Pz6XnN06NsQLlc53sUmAdWRJ62") {
+        snapshot = await get(databaseRef);
+      } else {
+        snapshot = await get(userQuery);
+      }
 
       // Filtrar manualmente los datos para obtener las lecturas del día de hoy
       const readingsForToday = [];
       snapshot.forEach((childSnapshot) => {
+        if (!childSnapshot.val().bloodGlucose) {
+          return
+        }
         const data = childSnapshot.val();
         const [datePart] = data.date.split(',');
         const [day, month, year] = datePart.trim().split('/');
