@@ -10,6 +10,7 @@ const ChartsPage = () => {
   const [insulinData, setInsulinData] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
   const { user } = useAuth();
+  const [selectedHalf, setSelectedHalf] = useState('');
   const [selectedMonth, setSelectedMonth] = useState('');
   const [selectedYear, setSelectedYear] = useState('');
   const [availableMonths, setAvailableMonths] = useState(new Array<any>());
@@ -23,8 +24,8 @@ const ChartsPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await firebaseService.getUserData(user, selectedMonth, selectedYear);
-        const extractedGlucoseData = extractGlucoseData(Object.values(data));
+        const data = await firebaseService.getUserDataChart({ user, selectedHalf, selectedMonth, selectedYear });
+        const extractedGlucoseData: any = Object.values(data);
         const extractedInsulinData = extractInsulinData(Object.values(data));
         setGlucoseData(extractedGlucoseData);
         setInsulinData(extractedInsulinData);
@@ -45,7 +46,7 @@ const ChartsPage = () => {
     };
 
     fetchData();
-  }, [user, selectedMonth, selectedYear]);
+  }, [user, selectedMonth, selectedYear, selectedHalf]);
 
   const extractInsulinData = (data: any) => {
     return data.map((entry: any) => ({
@@ -54,15 +55,17 @@ const ChartsPage = () => {
     }));
   };
 
-  const extractGlucoseData = (data: any) => {
-    return data.map((entry: any) => ({
-      date: entry.date,
-      value: parseInt(entry.bloodGlucose),
-    }));
+  const handleHalfChange = (event: any) => {
+    if (selectedMonth === '')
+      setError('Seleccione un mes');
+    else
+      setSelectedHalf(event.target.value);
   };
 
   const handleMonthChange = (event: any) => {
     setSelectedMonth(event.target.value);
+    if (event.target.value === '')
+      setSelectedHalf('');
   };
 
   const handleYearChange = (event: any) => {
@@ -72,6 +75,13 @@ const ChartsPage = () => {
   return (
     <div className="page-content">
       <div className="selection-container">
+        <select value={selectedHalf} onChange={handleHalfChange} className="form-select">
+          <option key="" value="">
+            Mitad
+          </option>
+          <option key="1" value="1">Primera</option>
+          <option key="2" value="2">Segunda</option>
+        </select>
         <select value={selectedMonth} onChange={handleMonthChange} className="form-select">
           <option key="" value="">
             Meses

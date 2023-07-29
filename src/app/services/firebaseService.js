@@ -112,7 +112,7 @@ const firebaseService = {
     }
   },
 
-  getUserData: async (user, month, year) => {
+  getUserDataChart: async ({ user, selectedHalf, selectedMonth, selectedYear }) => {
     try {
       // Obtener el usuario logado desde el contexto de autenticación
       if (!user) {
@@ -132,26 +132,37 @@ const firebaseService = {
         snapshot = await get(userQuery);
       }
 
-      // Filtrar los datos por mes y/o año
+      // Filtrar los datos por mes y/o año o quincena
       const userFormData = [];
       snapshot.forEach((childSnapshot) => {
         // no tenemos en cuenta registros de configuracion
         if (!childSnapshot.val().bloodGlucose) {
-          return
+          return;
         }
         const data = childSnapshot.val();
-        // Obtener el mes y el año de la fecha
         const [day, monthData, yearData] = data.date.split('/');
         const dataMonth = Number(monthData);
         const dataYear = Number(yearData.split(',')[0]);
 
-        // Verificar si el mes y el año coinciden con los parámetros proporcionados
-        const monthMatch = !month || dataMonth === Number(month);
-        const yearMatch = !year || dataYear === Number(year);
+        const middleDay = parseInt(new Date(selectedYear, selectedMonth + 1, 0).getDate() / 2);
 
-        // Agregar el dato al resultado si coincide con el mes y el año especificados
-        if (monthMatch && yearMatch) {
-          userFormData.push(data);
+        // Verificar si el mes y el año coinciden con los parámetros proporcionados
+        const monthMatch = !selectedMonth || dataMonth === Number(selectedMonth);
+        const yearMatch = !selectedYear || dataYear === Number(selectedYear);
+
+        if (selectedHalf && selectedMonth) {
+          const isSecondHalf = selectedHalf === '2';
+          const isFirstHalf = selectedHalf === '1';
+          if (isSecondHalf && dataMonth === Number(selectedMonth) && Number(day) > middleDay) {
+            userFormData.push(data);
+          } else if (isFirstHalf && dataMonth === Number(selectedMonth) && Number(day) <= middleDay) {
+            userFormData.push(data);
+          }
+        } else {
+
+          if (monthMatch && yearMatch) {
+            userFormData.push(data);
+          }
         }
       });
 
