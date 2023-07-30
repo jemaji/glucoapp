@@ -29,8 +29,13 @@ const Chart = ({ glucoseData = [], insulinData = []}) => {
 
     // emparejar array de glucose con array de after a través de la fecha
     if (filteredGlucoseAfterData.length > 0) {
-      const date = filteredGlucoseAfterData[0].date.split(" ")[0];
-      const undefinedPositions = filteredGlucoseData.filter(elem => elem.date.split(" ")[0] !== date).map(e=>undefined);
+      const [day, month, year] = filteredGlucoseAfterData[0].date.split(",")[0].split("/");
+      const dateBase = new Date(year, month - 1, day);
+      const undefinedPositions = filteredGlucoseData.filter(elem => {
+        const [day, month, year] =  elem.date.split(",")[0].split("/");
+        const dateElem = new Date(year, month - 1, day);
+        return dateElem < dateBase;
+      }).map(e=>undefined);
       filteredGlucoseAfterData = [...undefinedPositions, ...filteredGlucoseAfterData];
     }
     
