@@ -206,7 +206,8 @@ const firebaseService = {
         const [datePart] = data.date.split(',');
         const [day, month, year] = datePart.trim().split('/');
         const formattedMonth = month.length === 1 ? `0${month}` : month;
-        const formattedDate = `${day}/${formattedMonth}/${year}`;
+        const formattedDay = day.length === 1 ? `0${day}` : day;
+        const formattedDate = `${formattedDay}/${formattedMonth}/${year}`;
         // Comprobar si la fecha coincide con el día de hoy
         if (formattedDate === todayDate) {
           readingsForToday.push(data);
