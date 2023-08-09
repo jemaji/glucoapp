@@ -13,6 +13,8 @@ import withAuth from '../services/withAuth';
 
 const Chart = ({ glucoseData = [], insulinData = []}) => {
   const [chartData, setChartData] = useState([]);
+  const [tableDays, setTableDays] = useState(6);
+  const [dataDays, setDataDays] = useState([]);
   
   const glucoseValues = glucoseData.map(entry => entry.bloodGlucose);
   const glucoseMax = Math.max(...glucoseValues); // Valor máximo de glucosa
@@ -39,10 +41,10 @@ const Chart = ({ glucoseData = [], insulinData = []}) => {
       filteredGlucoseAfterData = [...undefinedPositions, ...filteredGlucoseAfterData];
     }
     
-    const filteredInsulinData = insulinData.map(entry => ({
+    const filteredInsulinData = insulinData.filter(elem => elem.value !== 0).map(entry => ({
       date: entry.date,
-      insulina: entry.value,
-    })).filter(elem => elem.insulina !== 0);
+      insulina: parseInt(entry.value),
+    }));
 
     // Combinar los datos filtrados para el gráfico
     const chartData = filteredGlucoseData.map((entry, index) => ({
@@ -53,7 +55,12 @@ const Chart = ({ glucoseData = [], insulinData = []}) => {
     }));
 
     setChartData(chartData);
-  }, [glucoseData, insulinData]);
+
+    const lastXData = chartData.slice(tableDays);
+
+    setDataDays(lastXData);
+
+  }, [glucoseData, insulinData, tableDays]);
 
   const formatTick = (value) => {
     const date = new Date(value);
@@ -66,7 +73,9 @@ const Chart = ({ glucoseData = [], insulinData = []}) => {
     return new Date(Number(year), Number(month) - 1, Number(day)); // Restamos 1 al mes ya que en JavaScript los meses van de 0 a 11
   };
 
-  const lastSixData = chartData.slice(-6);
+  const handleDays = (event) => {
+    setTableDays(event.target.value);
+  }
 
   return (
     <div>
@@ -109,7 +118,13 @@ const Chart = ({ glucoseData = [], insulinData = []}) => {
       </div>
       <div className="table-container">
         <div className="title-container">
-          <span>Últimos 6 datos introducidos</span>
+          <span>Datos tabla</span>
+          {/* <select value={tableDays} onChange={handleDays} className="form-select">
+              <option key={6} value={6}>6</option>
+              <option key={12} value={12}>12</option>
+              <option key={18} value={18}>18</option>
+              <option key={24} value={24}>24</option>
+          </select> */}
         </div>
         <table>
           <thead>
@@ -121,7 +136,7 @@ const Chart = ({ glucoseData = [], insulinData = []}) => {
             </tr>
           </thead>
           <tbody>
-            {lastSixData.map((entry) => (
+            {dataDays.map((entry) => (
               <tr key={entry.date}>
                 <td>{entry.date}</td>
                 <td>{entry.glucosa}</td>

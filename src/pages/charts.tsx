@@ -51,7 +51,7 @@ const ChartsPage = () => {
   const extractInsulinData = (data: any) => {
     return data.map((entry: any) => ({
       date: entry.date,
-      value: parseInt(entry.insulin),
+      value: entry.insulin,
     }));
   };
 
