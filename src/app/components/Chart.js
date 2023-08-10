@@ -43,7 +43,7 @@ const Chart = ({ glucoseData = [], insulinData = []}) => {
     
     const filteredInsulinData = insulinData.filter(elem => elem.value !== 0).map(entry => ({
       date: entry.date,
-      insulina: parseInt(entry.value),
+      insulina: entry.value === ''?null:parseInt(entry.value),
     }));
 
     // Combinar los datos filtrados para el gráfico

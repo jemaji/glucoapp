@@ -52,7 +52,8 @@ const BloodGlucoseForm = () => {
 
   const controlSlow = (lenta) => {
     if (todayData.length === 0) {
-      setSlowMessage('Recuerda las ' + (lenta || pautaData.lenta) + ' unidades de lenta');
+      // setSlowMessage('Recuerda las ' + (lenta || pautaData.lenta) + ' unidades de lenta');
+      setSlowMessage('Recuerda tomarte la pastilla');
     }
   }
 
@@ -140,15 +141,16 @@ const BloodGlucoseForm = () => {
         insulin,
         date: new Date().toLocaleString(),
       };
-
-      if (todayData.length % 2 === 1) {
-        data.insulin = 0;
-      }
+      
+      data.insulin = '';
+      // if (todayData.length % 2 === 1) {
+        // data.insulin = '0';
+      // }
 
       await firebaseService.saveData(data, user);
-      controlPautaInsulinaRapida();
-      controlPautaInsulinaLenta();
-      firebaseService.saveConfigKey('pauta', pautaData, user.uid);
+      // controlPautaInsulinaRapida();
+      // controlPautaInsulinaLenta();
+      // firebaseService.saveConfigKey('pauta', pautaData, user.uid);
       setTodayData([...todayData, data])
 
       setBloodGlucose('');
@@ -186,7 +188,8 @@ const BloodGlucoseForm = () => {
         onKeyDown={handleNextField}
         placeholder="Glucosa"
       />
-      {todayData.length % 2 == 0 && (
+      {/* {todayData.length % 2 == 0 && ( */}
+      {false && (
         <>
           <img className='label-image' src="/insulina.png" alt="Insulin label" />
           <div className='reminder-insuline'>{reminderMessage}</div>
